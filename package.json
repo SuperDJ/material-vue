@@ -1,0 +1,81 @@
+{
+	"name": "material-vue",
+	"version": "2019.4.26",
+	"description": "Vue wrapper for the Material CSS framework",
+	"main": "dist/material.js",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"scripts": {
+		"test": "jest --coverage",
+		"dev": "cross-env webpack-dev-server --config webpack.config.js --mode=development -w --hot",
+		"development": "npm run dev",
+		"prod": "cross-env webpack --config webpack.config.js --mode=production -p",
+		"production": "npm run prod"
+	},
+	"keywords": [
+		"material design",
+		"material components",
+		"front-end",
+		"app",
+		"scss",
+		"css",
+		"vuejs"
+	],
+	"devDependencies": {
+		"@babel/core": "^7.4.3",
+		"@babel/parser": "^7.4.3",
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
+		"@babel/preset-env": "^7.4.3",
+		"@vue/test-utils": "^1.0.0-beta.29",
+		"acorn": "^6.1.1",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-jest": "^24.7.1",
+		"babel-loader": "^8.0.5",
+		"babel-plugin-dynamic-import-node": "^2.2.0",
+		"clean-webpack-plugin": "^1.0.1",
+		"cross-env": "^5.2.0",
+		"css-loader": "^2.1.1",
+		"file-loader": "^3.0.1",
+		"jest": "^24.7.1",
+		"mini-css-extract-plugin": "^0.5.0",
+		"node-sass": "^4.11.0",
+		"npm-run-all": "^4.1.5",
+		"postcss-color-hex-alpha": "^5.0.3",
+		"postcss-color-mod-function": "^3.0.3",
+		"postcss-loader": "^3.0.0",
+		"postcss-preset-env": "^6.6.0",
+		"postcss-scss": "^2.0.0",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"uglifyjs-webpack-plugin": "^2.1.2",
+		"vue": "^2.6.10",
+		"vue-jest": "^3.0.4",
+		"vue-loader": "^15.7.0",
+		"vue-router": "^3.0.6",
+		"vue-template-compiler": "^2.6.10",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.1",
+		"webpack-dev-server": "^3.3.1",
+		"webpack-merge": "^4.2.1",
+		"webpack-serve": "^2.0.3"
+	},
+	"browserslist": [
+		"last 2 Android major versions",
+		"last 2 Chrome major versions",
+		"last 2 ChromeAndroid major versions",
+		"last 2 Edge major versions",
+		"last 2 Firefox major versions",
+		"last 2 FirefoxAndroid major versions",
+		"last 2 iOS major versions",
+		"last 2 Opera major versions",
+		"last 2 OperaMini major versions",
+		"last 2 OperaMobile major versions",
+		"last 2 Safari major versions",
+		"last 2 Samsung major versions"
+	],
+	"dependencies": {
+		"smaterial": "^2019.4.23"
+	}
+}
