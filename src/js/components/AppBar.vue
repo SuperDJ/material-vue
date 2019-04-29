@@ -1,5 +1,5 @@
 <template>
-    <header class="app-bar" :class="{'app-bar--fixed': fixed, 'app-bar--drawer-fixed': drawerFixed}">
+    <header class="app-bar" :class="classObject">
         <icon icon="menu" :action="action" />
 
         <h1 class="app-bar__title">{{ title }}</h1>
@@ -32,9 +32,22 @@
     			type: String,
                 required: true,
             },
+			modal: {
+				type: Boolean,
+				required: false
+			}
         },
+		computed: {
+    		classObject() {
+    			return {
+					'app-bar--fixed': this.fixed,
+					'app-bar-drawer--fixed': this.drawerFixed,
+					'app-bar--modal': this.modal,
+				}
+			}
+		},
         components : {
-    		'Icon': () => import('../components/Icon')
+    		Icon: () => import('./Icon')
         }
     }
 </script>
