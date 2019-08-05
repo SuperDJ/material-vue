@@ -16,8 +16,11 @@
 
 		<drawer :active="drawerActive" modal>
 			<ul>
-				<li><router-link :to="{name: 'Index'}">Home</router-link></li>
-				<li><router-link :to="{name: 'Iconography'}">Home</router-link></li>
+				<drawer-item :to="{name: 'Index'}" content="Home"/>
+				<drawer-item to="#" content="Getting started"/>
+				<drawer-item to="#" content="Getting started"/>
+				<drawer-item to="https://superdj.github.io/material/layout/grid.html" />
+				<drawer-item :to="{name: 'Iconography'}" content="Iconography"/>
 			</ul>
 		</drawer>
 	</div>
@@ -47,6 +50,7 @@
     		AppBar: () => import('../components/AppBar'),
 			Icon: () => import('../components/Icon'),
 			Drawer: () => import('../components/NavigationDrawer'),
+			DrawerItem: () => import('../components/DrawerItem'),
 			Tooltip: () => import('../components/Tooltip')
 		}
 	}

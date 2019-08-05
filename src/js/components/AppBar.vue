@@ -32,10 +32,6 @@
     			type: String,
                 required: true,
             },
-			modal: {
-				type: Boolean,
-				required: false
-			}
         },
 		computed: {
     		classObject() {

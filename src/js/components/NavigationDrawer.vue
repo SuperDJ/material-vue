@@ -1,6 +1,8 @@
 <template>
-    <nav class="drawer" :class="{'drawer--active': active, 'drawer--fixed': fixed}">
-        <slot></slot>
+    <nav class="drawer" :class="classObject">
+		<ul>
+        	<slot></slot>
+		</ul>
     </nav>
 </template>
 
@@ -17,7 +19,21 @@
     			type: Boolean,
                 required: false,
                 default: false
-            }
-        }
+            },
+			modal: {
+            	type: Boolean,
+				required: false,
+			}
+        },
+		computed: {
+    		classObject()
+			{
+				return {
+					'drawer--active': this.active,
+					'drawer--fixed': this.fixed,
+					'drawer--modal': this.modal,
+				}
+			}
+		}
     }
 </script>

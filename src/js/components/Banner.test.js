@@ -34,8 +34,7 @@ describe('Banner', () => {
 
 	it('Has an image', () => {
 		wrapper.setProps({
-			image: true,
-			imageSource: 'test.jpg'
+			image: 'test.jpg',
 		});
 
 		expect(wrapper.contains('img')).toBe(true);

@@ -1,6 +1,6 @@
 <template>
     <div class="banner" :class="classObject">
-        <div class="banner__image" v-if="image && imageSource && imageSource.length > 0">
+        <div class="banner__image" v-if="image">
             <img :src="imageSource" alt="placeholder">
         </div>
 
@@ -8,10 +8,14 @@
             {{ content }}
         </div>
 
-        <div class="banner__actions">
-			<Button text :action="action1" :content="action1Text" v-if="action1 && action1Text" />
-
-            <Button text :action="action2" :content="action2Text" v-if="action2 && action2Text" class="md-down-hide" />
+        <div class="banner__actions" v-if="actions">
+			<Button
+				text
+				v-for="(action, i) of actions"
+				:action="action.action"
+				:content="action.content"
+				:class="{'md-down-hide': i === actions.length -1}"
+			/>
         </div>
     </div>
 </template>
@@ -20,20 +24,8 @@
     export default {
     	name: 'Banner',
         props: {
-			action1: {
-				type: Function,
-				required: false,
-			},
-			action1Text: {
-				type: String,
-				required: false,
-			},
-			action2: {
-				type: Function,
-				required: false,
-			},
-			action2Text: {
-				type: String,
+			actions: {
+				type: Array,
 				required: false,
 			},
 			content: {
@@ -41,10 +33,6 @@
 				required: true,
 			},
 			image: {
-				type: Boolean,
-				required: false,
-			},
-			imageSource: {
 				type: String,
 				required: false,
 			},

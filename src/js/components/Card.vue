@@ -8,7 +8,9 @@
             <slot/>
         </div>
 
-        <div class="card__actions"></div>
+        <div class="card__actions" v-if="actions">
+			<s-button text :action="action.action" content="action.content" v-for="(action, i) of actions"/>
+		</div>
     </div>
 </template>
 
@@ -24,6 +26,13 @@
     			type: String,
                 required: false,
             },
-        }
+			actions: {
+    			type: Object,
+				required: false,
+			}
+        },
+		components: {
+    		SButton: () => import('./Button'),
+		}
     }
 </script>
